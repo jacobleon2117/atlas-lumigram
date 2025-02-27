@@ -10,7 +10,7 @@ import {
   TouchableWithoutFeedback
 } from 'react-native';
 import { FlashList } from "@shopify/flash-list";
-import { homeFeed } from '@/placeholder';
+import { favoritesFeed } from '@/placeholder';
 import { Ionicons } from '@expo/vector-icons';
 
 interface FeedItem {
@@ -68,15 +68,15 @@ const Post: React.FC<{ item: FeedItem }> = ({ item }) => {
   );
 };
 
-export default function HomeScreen() {
+export default function FavoritesScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Home Feed</Text>
+        <Text style={styles.headerTitle}>Favorites</Text>
         <Ionicons name="exit-outline" size={24} color="#5fecc0" />
       </View>
       <FlashList
-        data={homeFeed}
+        data={favoritesFeed}
         renderItem={({ item }: { item: FeedItem }) => <Post item={item} />}
         estimatedItemSize={400}
         showsVerticalScrollIndicator={false}
